@@ -5,13 +5,13 @@ public class Tree {
   Tree l, r;
   boolean dfn;
 
-  Tree() {
+  public Tree() {
     l = null;
     r = null;
     dfn = false;
   }
 
-  Tree(int i) {
+  public Tree(int i) {
     l = null;
     r = null;
     value = i;
