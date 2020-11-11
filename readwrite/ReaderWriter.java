@@ -25,14 +25,16 @@ public class ReaderWriter implements Runnable {
           int i = Integer.parseInt(sc.nextLine());
           tree.write(i);
         }
-      } else {
+      } 
+      else {
         while (sc.hasNextLine()) {
           int i = Integer.parseInt(sc.nextLine());
           tree.read(i);
         }
       }
       sc.close();
-    } catch (Exception ex) {
+    } 
+    catch (Exception ex) {
       ex.printStackTrace();
     }
     return;

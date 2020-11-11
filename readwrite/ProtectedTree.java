@@ -31,9 +31,8 @@ public class ProtectedTree {
   public int read(int value) throws InterruptedException {
     lock.lock();
     // Check validity of read:
-    while (success_reads >= writes) {
+    while (success_reads >= writes)
       read_check.await();
-    }
     // Read the value:
     int answer = this.tree.read(value);
     if (answer == value){
