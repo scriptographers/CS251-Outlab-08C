@@ -21,20 +21,20 @@ public class ReaderWriter implements Runnable {
       Scanner sc = new Scanner(file);
 
       if (isw) {
+        // If it is a Writer
         while (sc.hasNextLine()) {
           int i = Integer.parseInt(sc.nextLine());
           tree.write(i);
         }
-      } 
-      else {
+      } else {
+        // If it is a Reader
         while (sc.hasNextLine()) {
           int i = Integer.parseInt(sc.nextLine());
           tree.read(i);
         }
       }
       sc.close();
-    } 
-    catch (Exception ex) {
+    } catch (Exception ex) {
       ex.printStackTrace();
     }
     return;

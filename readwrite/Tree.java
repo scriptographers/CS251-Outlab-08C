@@ -3,7 +3,8 @@ package readwrite;
 public class Tree {
   int value;
   Tree l, r;
-  boolean dfn;
+  boolean dfn; // On initialization, the tree must have a node with no value
+  // However, once a write has been done, all nodes would have some value.
 
   public Tree() {
     l = null;
@@ -23,8 +24,7 @@ public class Tree {
       value = i;
       dfn = true;
       return;
-    }
-    else{
+    } else {
       // Search left subtree
       if (value > i) {
         if (l == null)
@@ -34,12 +34,13 @@ public class Tree {
       }
       // Search right subtree
       else if (value < i) {
-        if (r == null) 
+        if (r == null)
           r = new Tree(i);
-        else 
+        else
           r.write(i);
       }
       // value cannot be equal to i (this can be assumed)
+      // Even if it is, the tree should not be updated
       return;
     }
   }
@@ -48,6 +49,7 @@ public class Tree {
     // Found i
     if (value == i)
       return i;
+
     // Search left subtree
     else if (value > i) {
       if (l != null)
