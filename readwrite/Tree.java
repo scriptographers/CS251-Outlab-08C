@@ -23,39 +23,44 @@ public class Tree {
       value = i;
       dfn = true;
       return;
-    } else {
+    }
+    else{
+      // Search left subtree
       if (value > i) {
-        if (l == null) {
+        if (l == null)
           l = new Tree(i);
-        } else {
+        else
           l.write(i);
-        }
-      } else if (value < i) {
-        if (r == null) {
-          r = new Tree(i);
-        } else {
-          r.write(i);
-        }
       }
+      // Search right subtree
+      else if (value < i) {
+        if (r == null) 
+          r = new Tree(i);
+        else 
+          r.write(i);
+      }
+      // value cannot be equal to i (this can be assumed)
       return;
     }
   }
 
   public int read(int i) {
-    if (value == i) {
+    // Found i
+    if (value == i)
       return i;
-    } else if (value > i) {
-      if (l != null) {
+    // Search left subtree
+    else if (value > i) {
+      if (l != null)
         return l.read(i);
-      } else {
+      else
         return value;
-      }
-    } else {
-      if (r != null) {
+    }
+    // Search right subtree
+    else {
+      if (r != null)
         return r.read(i);
-      } else {
+      else
         return value;
-      }
     }
   }
 
